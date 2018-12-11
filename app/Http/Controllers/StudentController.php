@@ -14,6 +14,8 @@ class StudentController extends Controller
      return "Created";
 
     }
+    //git reset --hard HEAD
+    //git pull
 
     public function fetch($names)
     {
