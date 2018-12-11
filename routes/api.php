@@ -18,3 +18,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 Route::post('save','StudentController@save');
 Route::post('fetch/{names}','StudentController@fetch');
+Route::post('search','StudentController@search');

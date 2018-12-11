@@ -22,4 +22,15 @@ class StudentController extends Controller
         $student=Student::where(['names'=>$names])->first();
         return $student;
     }
+    public function search(Request $request)
+    {
+        $search=$request->input('search');
+        $student=Student::where('names', 'like',"%$search%")
+            ->orWhere('email', 'like',"%$search%")
+            ->orWhere('age', 'like',"%$search%");
+        if ($student->exists())
+        return $student->first();
+        else
+            return"No Item Found";
+    }
 }
