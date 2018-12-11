@@ -10,8 +10,8 @@ class StudentController extends Controller
     public function save(Request $request)
     {
      Student::create($request->all());
-     echo "submitted";
-     return back()->with("success");
+
+     return "Created";
 
     }
 
@@ -19,6 +19,5 @@ class StudentController extends Controller
     {
         $student=Student::where(['names'=>$names])->first();
         return $student;
-
     }
 }
